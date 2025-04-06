@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.1rem;
+  background: #fff;
+  /* margin-left: 4rem; */
+}
+.actions{
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}

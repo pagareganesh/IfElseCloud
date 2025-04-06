@@ -1,0 +1,56 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+.customer {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.bar {
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.fill {
+  background: #6f42c1;
+  height: 6px;
+}
+.tag {
+  background: #e0e7ff;
+  padding: 2px 6px;
+  margin: 0 2px;
+  border-radius: 4px;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+progress {
+  width: 100%;
+}
+
+span {
+  display: inline-block;
+  padding: 2px 8px;
+  margin: 2px;
+  border-radius: 12px;
+}

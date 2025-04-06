@@ -1,0 +1,81 @@
+<!-- <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Role</th>
+      <th>Email %</th>
+      <th>Teams</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let member of members">
+      <td>{{ member.name }}</td>
+      <td>
+        <span
+          [ngClass]="{
+            customer: member.status === 'Customer',
+            churned: member.status === 'Churned'
+          }"
+          >{{ member.status }}</span
+        >
+      </td>
+      <td>{{ member.role }}</td>
+      <td>
+        <div class="bar">
+          <div class="fill" [style.width.%]="member.emailPercent"></div>
+        </div>
+        {{ member.emailPercent }}%
+      </td>
+      <td>
+        <span class="tag" *ngFor="let team of member.teams">{{ team }}</span>
+      </td>
+      <td><button>Edit</button><button>Delete</button></td>
+    </tr>
+  </tbody>
+</table> -->
+
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let column of gridColumns">{{ column.column_name }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of gridData">
+      <td *ngFor="let column of gridColumns">
+        <!-- Handle nested objects and arrays appropriately -->
+        <ng-container [ngSwitch]="column.type">
+          <ng-container *ngSwitchCase="'name'">
+            {{ item[column.column_key]?.first_name }}
+            {{ item[column.column_key]?.last_name }}
+          </ng-container>
+          <ng-container *ngSwitchCase="'status'">
+            {{ item[column.column_key] }}
+          </ng-container>
+          <ng-container *ngSwitchCase="'text'">
+            {{ item[column.column_key] }}
+          </ng-container>
+          <ng-container *ngSwitchCase="'progress'">
+            <progress [value]="item[column.column_key]" max="100"></progress>
+          </ng-container>
+          <ng-container *ngSwitchCase="'tags'">
+            <span
+              *ngFor="let tag of item[column.column_key]"
+              [ngStyle]="{
+                color: tag.text_color,
+                'background-color': tag.background_color
+              }"
+            >
+              {{ tag.value }}
+            </span>
+          </ng-container>
+          <ng-container *ngSwitchDefault>
+            {{ item[column.column_key] }}
+          </ng-container>
+        </ng-container>
+      </td>
+    </tr>
+  </tbody>
+</table>

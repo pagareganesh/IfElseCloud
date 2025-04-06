@@ -1,0 +1,14 @@
+.team-section {
+  padding: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 300px;
+}

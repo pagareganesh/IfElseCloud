@@ -1,0 +1,32 @@
+<!-- <app-header></app-header>
+<app-sidebar></app-sidebar> -->
+<!-- <app-vendor-breakdown></app-vendor-breakdown>
+<app-vendor-status></app-vendor-status> -->
+<div class="dashboard-row">
+  <!-- Vendor Breakdown -->
+  <div class="card chart-card-breakdown">
+    <h3>Vendor Breakdown</h3>
+    <div class="chart-container">
+      <canvas baseChart
+        [data]="barChartData"
+        [options]="barChartOptions"
+        [type]="'bar'">
+      </canvas>
+    </div>
+  </div>
+
+  <!-- Monitor -->
+  <div class="card chart-card-monitor">
+    <h3>Monitor</h3>
+    <div class="chart-container monitor-chart">
+      <canvas baseChart
+        [data]="doughnutChartData"
+        [options]="doughnutChartOptions"
+        [type]="'doughnut'">
+      </canvas>
+    </div>
+  </div>
+</div>
+
+
+<app-team-members></app-team-members>

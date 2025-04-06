@@ -1,0 +1,38 @@
+.card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* .progress-ring {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: conic-gradient(#6f42c1 80%, #eee 0%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+.chart-container {
+  flex: 1;
+  position: relative;
+  height: 100%;
+}
+
+.monitor-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.monitor-status {
+  text-align: center;
+}
