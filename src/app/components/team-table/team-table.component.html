@@ -1,0 +1,169 @@
+<table *ngIf="!isLoading">
+  <thead>
+    <tr>
+      <th>
+        <input
+          type="checkbox"
+          [(ngModel)]="selectAll"
+          (change)="toggleAllSelection()"
+        />
+      </th>
+      <th *ngFor="let column of gridColumns">{{ column.column_name }}</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let member of paginatedData; let i = index">
+      <td>
+        <input
+          type="checkbox"
+          [(ngModel)]="member.selected"
+          (change)="checkIfAllSelected()"
+        />
+      </td>
+
+      <td class="member-name">
+        <div class="user-info">
+          <div class="initials">
+            {{
+              member.name.first_name.charAt(0).toUpperCase() +
+                member.name.last_name.charAt(0).toUpperCase()
+            }}
+          </div>
+          <div class="user-details">
+            <div class="name">
+              {{ member.name.first_name + " " + member.name.last_name }}
+            </div>
+            <div class="username">{{ "@" + member.name.first_name }}</div>
+          </div>
+        </div>
+      </td>
+
+      <td>
+        <span
+          [ngClass]="{
+            customer: member.status === 'Customer',
+            churned: member.status === 'Churned'
+          }"
+        >
+          <li>{{ member.status }}</li>
+        </span>
+      </td>
+
+      <td>
+        <span>{{ member.role }}</span>
+      </td>
+
+      <td>
+        <div class="progress-inline">
+          <div class="progress-container">
+            <div
+              class="progress-bar"
+              [style.width.%]="member.license_used"
+            ></div>
+          </div>
+          <span class="progress-label">{{ member.license_used }}%</span>
+        </div>
+      </td>
+
+      <td>
+        <span
+          class="team-tag"
+          *ngFor="let team of member.teams"
+          [ngStyle]="{
+            'background-color': team.background_color,
+            color: team.text_color
+          }"
+        >
+          {{ team.value }}
+        </span>
+      </td>
+
+      <td class="actions">
+        <button class="icon-btn" (click)="deleteRow(i)">
+          <span class="material-icons">delete</span>
+        </button>
+        <button class="icon-btn" (click)="openEditPopup(member)">
+          <span class="material-icons">edit</span>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+
+  <tfoot>
+    <tr>
+      <td colspan="100%">
+        <div class="pagination-wrapper">
+          <div class="nav-side">
+            <button
+              class="btn nav-btn"
+              (click)="previousPage()"
+              [disabled]="currentPage === 1"
+            >
+              ← Previous
+            </button>
+          </div>
+
+          <div class="page-numbers">
+            <ng-container *ngFor="let page of visiblePages">
+              <button
+                *ngIf="page !== '...'"
+                class="btn page-btn"
+                [class.active]="page === currentPage"
+                (click)="goToPage(page)"
+              >
+                {{ page }}
+              </button>
+              <span *ngIf="page === '...'" class="dots">...</span>
+            </ng-container>
+          </div>
+
+          <div class="nav-side">
+            <button
+              class="btn nav-btn"
+              (click)="nextPage()"
+              [disabled]="currentPage === totalPages"
+            >
+              Next →
+            </button>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+<div *ngIf="isLoading" class="loader-container">
+  <div class="spinner"></div>
+</div>
+
+<div *ngIf="showToast" class="toast-container">
+  <div [class]="'toast-message ' + toastType">
+    {{ toastMessage }}
+  </div>
+</div>
+
+<div class="modal-backdrop" *ngIf="editedMember">
+  <div class="modal-content">
+    <h3>Edit Member</h3>
+
+    <form [formGroup]="editForm">
+      <label>First Name:</label>
+      <input formControlName="first_name" />
+
+      <label>Last Name:</label>
+      <input formControlName="last_name" />
+
+      <label>Status:</label>
+      <input formControlName="status" />
+
+      <label>Role:</label>
+      <input formControlName="role" />
+    </form>
+
+    <div class="modal-actions">
+      <button class="save-btn" (click)="saveEditedMember()">Save</button>
+      <button class="cancel-btn" (click)="closeEditPopup()">Cancel</button>
+    </div>
+  </div>
+</div>

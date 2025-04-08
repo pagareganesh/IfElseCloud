@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  font-family: "Segoe UI", sans-serif;
+  background-color: white;
+}
+
+.header h2 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-icon {
+  font-size: 22px;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.btn span {
+  font-size: 16px;
+}

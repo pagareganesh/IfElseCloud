@@ -1,0 +1,17 @@
+.dashboard-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.vendor-breakdown {
+  flex: 2;
+}
+
+.vendor-status {
+  flex: 1;
+}
+
+.team-members {
+  margin-top: 15px;
+}

@@ -1,0 +1,80 @@
+.card.chart-card-monitor {
+  height: 350px;
+  width: 100%;
+  background: #ffffff;
+  padding: 10px 0 10px 0;
+  border-radius: 12px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.monitor-chart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.monitor-chart canvas {
+  width: 70% !important;
+  height: auto !important;
+  max-width: 100%;
+}
+
+.center-value {
+  position: absolute;
+  top: 60%;
+  transform: translate(-50%, -30%);
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.monitor-status {
+  text-align: center;
+}
+
+.text-section {
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
+.text-section h5 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #111827;
+}
+
+.text-section p {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.growth {
+  color: #22c55e;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.growth .icon-arrow-up-right {
+  margin-right: 4px;
+}
+
+h5 {
+  margin: 2px;
+}
+
+p {
+  margin: 0;
+}
