@@ -10,10 +10,9 @@ import { NgChartsModule } from 'ng2-charts';
   styleUrl: './vendor-status.component.css',
 })
 export class VendorStatusComponent {
-  // Monitor (Doughnut Chart)
   public doughnutChartOptions: ChartOptions<'doughnut'> = {
     responsive: true,
-    cutout: '70%',
+    cutout: '75%',
     plugins: {
       legend: {
         display: false,
@@ -22,12 +21,16 @@ export class VendorStatusComponent {
   };
 
   public doughnutChartData: ChartData<'doughnut'> = {
-    labels: ['Active', 'Inactive'],
+    labels: [],
     datasets: [
       {
-        data: [85, 15],
-        backgroundColor: ['#4caf50', '#e0e0e0'],
+        data: [240, 60],
+        backgroundColor: ['#7c3aed', '#e5e7eb'],
         borderWidth: 0,
+        borderRadius: 15,
+        hoverOffset: 4,
+        circumference: 180,
+        rotation: 270,
       },
     ],
   };

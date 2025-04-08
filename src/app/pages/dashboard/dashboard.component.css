@@ -4,40 +4,14 @@
   flex-wrap: wrap;
 }
 
-.card.chart-card-breakdown {
+.vendor-breakdown {
   flex: 2;
-  min-width: 300px;
-  height: 200px;
-  padding: 12px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.card.chart-card-monitor {
-  flex: 1;
-  min-width: 300px;
-  height: 200px;
-  padding: 12px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
-.chart-container {
+.vendor-status {
   flex: 1;
-  position: relative;
-  height: 100%;
-  overflow: hidden;
 }
 
-.chart-container canvas {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain;
+.team-members {
+  margin-top: 15px;
 }

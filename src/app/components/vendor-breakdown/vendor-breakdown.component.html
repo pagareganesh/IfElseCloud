@@ -1,12 +1,30 @@
-<!-- <div class="card vendor-breakdown">
-  <h3>Vendor Breakdown</h3>
+<div class="card chart-card-breakdown">
+  <div class="card-header">
+    <div class="icon-title">
+      <div class="icon-box">
+        <span class="material-symbols-outlined">category</span>
+      </div>
+      <div>
+        <h4 class="card-title">Vendor breakdown</h4>
+        <p class="subtitle">
+          Keep track of vendors and their security ratings.
+        </p>
+      </div>
+    </div>
+    <div class="dots-menu" title="Options">&#8942;</div>
+  </div>
+
   <div class="chart-container">
     <canvas
       baseChart
-      [datasets]="barChartData"
-      [labels]="barChartLabels"
+      [data]="barChartData"
       [options]="barChartOptions"
-      chartType="bar"
-    ></canvas>
+      [type]="'bar'"
+    >
+    </canvas>
   </div>
-</div> -->
+
+  <div class="card-footer">
+    <button class="btn view-report-btn">View full report</button>
+  </div>
+</div>

@@ -1,22 +1,38 @@
-<!-- <div class="card status-widget">
-  <h3>Vendors monitored</h3> -->
-  <!-- <p>You're using 80% of available spots.</p>
-  <div class="progress-ring"><span>240</span></div>
-  <p>You've almost reached your limit</p> -->
-  <!-- <div class="chart-container monitor-content">
+<div class="card chart-card-monitor">
+  <div class="card-header">
+    <div>
+      <h4 class="card-title">Vendors monitored</h4>
+      <p class="subtitle">You're using 80% of available spots.</p>
+    </div>
+    <div class="dots-menu" title="Options">&#8942;</div>
+  </div>
+
+  <div class="chart-container monitor-chart">
     <canvas
       baseChart
       [data]="doughnutChartData"
       [options]="doughnutChartOptions"
       [type]="'doughnut'"
-    >
-    </canvas>
-    <div class="monitor-status">
-      <h4>Active Vendors</h4>
-      <p>85%</p>
+    ></canvas>
+    <div class="center-value">240</div>
+    <div class="growth">
+      <span class="material-icons trend-icon">north_east</span>
+      <span class="text-success">10%</span>
     </div>
   </div>
-  <p>You've almost reached your limit</p>
-  <button>Upgrade plan</button>
-</div> -->
-<!-- <h3>Monitor</h3> -->
+
+  <div class="text-section">
+    <h5>You've almost reached your limit</h5>
+    <p>
+      You have used 80% of your available spots.<br />
+      Upgrade plan to monitor more vendors.
+    </p>
+  </div>
+
+  <div class="card-footer">
+    <button class="btn upgrade-plan-btn">
+      <span class="material-icons">bolt</span>
+      Upgrade plan
+    </button>
+  </div>
+</div>

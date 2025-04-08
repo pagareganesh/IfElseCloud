@@ -1,12 +1,30 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 0.1rem;
-  background: #fff;
-  /* margin-left: 4rem; */
+  align-items: center;
+  padding: 15px 20px;
+  font-family: "Segoe UI", sans-serif;
+  background-color: white;
 }
-.actions{
+
+.header h2 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.header-actions {
   display: flex;
-  justify-content: space-around;
-  padding: 1rem;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-icon {
+  font-size: 22px;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.btn span {
+  font-size: 16px;
 }
